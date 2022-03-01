@@ -1,0 +1,20 @@
+.partners {
+    @include margin-bottom(40px);
+
+    &__inner {
+        @include padding-top(60px);
+        @include elementBorderProportiesTop(1px solid $color-light-gray-aaa);
+    }
+
+    &__item {
+        display: flex !important;
+        justify-content: center;
+    }
+
+    &__img {
+        @include transitionAll($transition-duration);
+        opacity: 0.5;
+
+        &:hover {opacity: 1;}
+    }
+}

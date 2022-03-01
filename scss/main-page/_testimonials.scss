@@ -1,0 +1,108 @@
+.testimonials {
+    @include padding-bottom(85px);
+
+    &__inner {@include flex-column;}
+
+    &__block {@include flex(space-between, stretch);}
+
+    &__banner-wrapper {@include width-height(50%, 100%);}
+
+    &__content {@include padding(0 80px);}
+
+    &__title {
+        @include FontsGeneralVariables(30px, 400, 35px);
+        @include margin-bottom(20px);
+        letter-spacing: -0.75px;
+        color: $color-dark-green-0a472e;
+        max-width: 370px;
+    }
+
+    &__first-block {@include margin-bottom(40px);}
+
+    &__first-block &__desc {
+        @include FontsGeneralVariables(14px, 400, 1.25em);
+        @include margin-bottom(16px);
+        color: $color-light-dark-555;
+    }
+    
+    &__btn {
+        @include resetTagA;
+        @include FontsGeneralVariables(12px, 700, 1.25em);
+        @include padding-bottom(5px);
+        @include elementBorderProportiesBottom(1px solid $color-light-green-bac34e);
+        color: $color-light-green-bac34e;
+        text-transform: capitalize;
+
+        &:hover &-icon {left: 3px;}
+
+        &-icon {
+            @include margin-left(3px);
+            @include transitionAll($transition-duration);
+            font-size: 8px;
+            position: relative;
+            left: 0;
+        }
+    }
+
+    &__second-block {
+        flex-flow: row-reverse;
+        align-items: center;
+    }
+    
+    & .testimonials__slider {@include padding-right(20px);}
+
+    &__slider-item {
+        display: flex !important;
+        cursor: pointer;
+    }
+
+    &__slider-content {
+        max-width: 500px !important;
+        display: flex;
+        
+        &-inner {@include padding(0 20px 0 60px);  }
+    }
+
+    &__slider-img {@include width-height(49px, 38px);}
+
+    &__slider-title {
+        @include FontsGeneralVariables(30px, 400, 35px);
+        @include margin-bottom(30px);
+        color: $color-dark-green-0a472e;
+        letter-spacing: -0.75px;
+        display: inline-block;
+    }
+
+    &__slider-desc {
+        @include FontsGeneralVariables(14px, 400, 1.25em);
+        @include margin-bottom(16px);
+        color: $color-black-000;
+    }
+
+    &__slider-name {
+        @include margin(25px 0 40px 0);
+        @include FontsGeneralVariables(.875rem, 400, 1.25em);
+        color: $color-light-gray-aaa;
+        display: inline-block;
+    }
+
+    & .slick-dots {
+        @include padding(0 0 0 105px);
+        position: relative !important;
+        bottom: 0;
+        text-align: left;
+    }
+
+    & .slick-dots li {
+
+        &.slick-active button {background-color: $color-dark-green-0a472e;}
+
+        & button {
+            @include width-height(8px !important, 8px !important);
+            @include borderRadius(50%);
+            background-color: $color-light-gray-d5d5d5;
+        }
+        
+        &  button:before {display: none;}
+    }
+}

@@ -1,0 +1,71 @@
+.header-mobile {
+    @include padding(10px 0);
+    display: none;
+
+    &__top {@include flex(space-between, center);}
+
+    &__btn {@include ButtonReset; }
+
+    &__toggle-menu {
+        @include width-height(100%, 52px);
+        width: 100%;
+        background-color: $color-dark-green-0a472e;
+        
+        &--active {
+            @include padding-bottom(15px);
+            height: auto;
+        }
+
+        & .toggle-menu__list {
+            @include margin(0 auto);
+            width: 95%;
+            top: 0;
+            position: relative;
+    
+            & .toggle-menu__list--active {@include visibility-visible;}
+
+            &::before {left: 14px;}
+        }
+
+        & .toggle-menu__item {
+            @include flex-column;
+            align-items: flex-start;
+        }
+
+        & .toggle-menu__link {
+            @include flex(flex-start, center);
+            width: 100%;
+        }
+    
+        & .far.fa-chevron-down {
+            @include margin-left(auto);
+            font-size: 10px;
+        }
+
+        & .toggle-menu__item-drop-menu {
+            @include visibility-visible;
+            position: relative;
+            transform: translate(0);
+            box-shadow: none;
+        }
+    }
+
+    &-item-drop-menu {
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+
+}
+.fal.fa-bars {
+    font-weight: 400;
+    color: $color-black-000 !important;
+}
+
+.supplyments__drop-menu,
+.bread-eggs__drop-menu,
+.beauty-care__drop-menu {display: none;}
+
+.supplyments__drop-menu--active,
+.bread-eggs__drop-menu--active,
+.beauty-care__drop-menu--active {display: block;}

@@ -1,0 +1,132 @@
+@include breakpoint-down($max-sm) {
+    /*===========Media max-width: 768px=========== */
+    .container {@include container(720px);}
+    // =============================================
+    // HEADER=======================================
+    .header-mobile__toggle-menu .toggle-menu__list::before {left: 17px;}
+    // HEADER=====================================//
+    // MEIN >* SECTIONS=============================
+    // Hero=========================================
+    
+    .hero {
+        @include padding-top(30px);
+        
+        &__inner {
+            display: flex;
+            flex-direction: column;
+        }
+    
+        & .main-slider {height: 400px;}
+
+        .main-slider__item {height: 400px;}
+
+        & .hero__banners {
+            @include margin(0);
+            height: 220px;
+        }
+    }
+
+    .main-slider {
+        & .arrow {
+            right: 15px;
+            bottom: 20px;
+            @include width-height(30px, 30px);
+            
+            &-prev {right: 55px;}
+        }
+    }
+
+    .products__title {max-width: 100%;}
+
+    .product-gallery {
+        &__list {@include flex-column;}
+    
+        &__item {height: 230px;}
+    }
+
+    .testimonials {
+        &__slider-img {@include width-height(35px, 28px);}
+
+        &__title {font-size: calc(20px + (((30 - 20) * 2) * 0.8 ) * ((100vw - 320px) / 992));}
+    }
+
+    .contact-block {
+        &__item {
+            @include margin-bottom(16px);
+            width: 100%;
+            text-align: center;
+
+            &.contact-phone,
+            &.daily-news {@include padding(0);}
+
+            &-inner {height: auto;}
+        }
+
+        &__img-wrapper {
+            @include margin-bottom(15px);
+            border: 0;
+        }
+
+        &__item-inner {flex-direction: column;}
+
+        &__info {width: 100%;}
+
+        &__info.contact-form {@include padding(0 15px);}
+
+        &__input {width: 100%;}
+    }
+
+    .navigation-blocks {
+        flex-direction: column;
+        align-items: center !important; 
+        text-align: center;
+    }
+
+    .back-to-top {right: 5px;}
+    // Hero=========================================
+    // MEIN >* SECTIONS===========================//
+    // FOOTER=======================================
+    .footer {&__inner {@include padding(40px 0);}}
+
+    .footer .navigation-blocks__item:not(:last-child),
+    .navigation-blocks__item.order-1 {
+        @include margin-right(0);
+        @include margin-bottom(15px);
+    }
+    // FOOTER=====================================//
+    // ABOUT========================================
+    .about {
+        height: 150px;
+        background-position: center top;
+    }
+
+    .about-contact .contact-block__item-inner {height: 115px !important;}
+
+    .about-contact__payment {@include padding-right(0);}
+    // ABOUT======================================//
+    // CONTACT US===================================
+    .contact-us {
+        @include padding-bottom(0);
+    }
+
+    .contact-us__inner {
+        flex-direction: column;
+    }
+
+    .contact-us__block-info {
+        @include margin-bottom(20px);
+        max-width: 100%;
+        flex-basis: 100%;
+        width: 100%;
+    }
+    .contact-form__group {width: 100%;}
+
+    .contact-us {
+        &__input,
+        &__select,
+        &__textarea {max-width: 100%;}
+    }
+
+    .contact-us__form-block {width: 100%;}
+    // CONTACT US=================================//
+}

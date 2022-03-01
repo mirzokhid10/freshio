@@ -1,0 +1,7 @@
+.main {
+    @include margin(0 auto);
+    @include padding-bottom(0);
+    @include width-height(100%, 100%);
+    max-width: 1450px;
+    background-color: $color-white-fff;
+}

@@ -1,0 +1,58 @@
+.card {
+    &__list {
+        @include list-reset;
+        @include flex-row;
+        @include elementBorderProportiesBottom(1px solid $color-light-gray-e2e2e2);
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        @include padding(60px 15px);
+        @include flex-row;
+        position: relative;
+
+        &::after {
+            @include width-height(0, 3px);
+            @include transitionAll($transition-duration);
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            background-color: $color-dark-green-0a472e;
+        }
+
+        &:hover::after {width: 100%;}
+
+        &::before {
+            @include width-height(62px, 64px);
+            @include backgroundImgProporties(center, cover);
+            content: '';
+            display: inline-block;
+        }
+
+        &:first-child::before {background-image: url('../../media/img/service/service1.png');}
+
+        &:nth-child(2)::before {background-image: url('../../media/img/service/service2.png');}
+        
+        &:nth-child(3)::before {background-image: url('../../media/img/service/service3.png');}
+
+        &:last-child::before {background-image: url('../../media/img/service/service4.png');}
+    }
+
+    &__content {
+        @include padding-left(15px);
+        width: calc(100% - 62px);
+    }
+
+    &__title {
+        @include FontsGeneralVariables(16px, 400, 1.1);
+        @include margin-bottom(10px);
+        display: inline-block;
+        color: $color-dark-green-0a472e;
+    }
+
+    &__desc {
+        @include FontsGeneralVariables(12px, 400, 18px);
+        color: $color-light-dark-555;
+    }
+}

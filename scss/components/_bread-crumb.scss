@@ -1,0 +1,22 @@
+.bread-crumb {
+    @include list-reset;
+    @include flex-row;
+
+    &__item {@include margin-right(10px);}
+
+    &__link {
+        @include resetTagA;
+        @include flex-row;
+        @include FontsGeneralVariables(14px, 400, 1);
+        @include transitionAll($transition-duration);
+        color: $color-light-dark-555;
+        text-transform: capitalize;
+
+        &:hover {color: $color-light-green-bac34e;}
+    }
+
+    &__icon {
+        @include padding-left(10px);
+        font-size: 8px;
+    }
+}

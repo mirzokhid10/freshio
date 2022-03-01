@@ -1,0 +1,55 @@
+.main-slider {
+    height: 650px;
+    overflow: hidden;
+
+    &__item {
+        @include width-height(850px, 650px);
+        @include backgroundImgProporties(center, cover);
+        position: relative;
+
+        &.slide-one {background-image: url('../../media/img/slider-img/freshio_h2-slide1.jpg');}
+
+        &.slide-two {background-image: url('../../media/img/slider-img/freshio_h2-slide2.jpg');}
+    }
+
+    &__content {
+        position: absolute;
+        left: 105px;
+        top: 130px;
+    }
+
+    &__pre-title {
+        @include FontsGeneralVariables(20px, 400, 24px);
+        @include margin-bottom(35px);
+        color: $color-light-green-bac34e;
+        font-family: $font-Pacifico;
+        display: inline-block;
+    }
+
+    &__title {
+        @include FontsGeneralVariables(40px, 400, 45px);
+        @include margin-bottom(30px);
+        color: $color-dark-green-073522;
+    }
+
+    & .arrow {
+        @include ButtonReset;
+        @include width-height(50px, 50px);
+        @include flex(center, center);
+        @include borderRadius(50%);
+        position: absolute;
+        right: 42px;
+        z-index: 100;
+        bottom: 15px;
+        background-color: $color-white-fff;
+
+        &:hover {
+            background-color: $color-light-green-bac34e;
+            color: $color-white-fff;
+        }
+        
+        &-prev {right: 97px;}
+
+        &-icon {font-size: 14px;}
+    }
+}

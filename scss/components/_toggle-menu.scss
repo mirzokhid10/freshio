@@ -1,0 +1,122 @@
+.toggle-menu {
+    position: relative;
+    width: 295px;
+
+    &__btn {
+        @include ButtonReset;
+        @include margin(5.5px 0);
+        @include padding(16px 30px);
+        @include FontsGeneralVariables(14px, 400, 1.1);
+        @include flex(flex-start, center);
+        @include width-height(100%, 100%);
+        color: $color-white-fff;
+        text-transform: capitalize;
+        position: relative;
+
+        &::after {
+            @include width-height(1px, 30px);
+            content: '';
+            background-color: $color-light-green-3b6c58;
+            position: absolute;
+            right: 0;
+        }
+    }
+
+    &__icon {@include margin-right(15px);}
+
+    &__list {
+        @include list-reset;
+        @include width-height(100%, auto);
+        @include transitionAll(height 0.4s ease 0s);
+        @include padding(10px 20px 20px);
+        @include borderRadius(4px);
+        position: absolute;
+        top: 65px;
+        z-index: 30;
+        background-color: $color-white-fff;
+        box-shadow: -1px 19px 19px -3px rgba(30, 31, 32, 0.44);
+        position: absolute;
+        @include visibility-hidden;
+
+        &--active {@include visibility-visible;}
+
+        &::before {
+            @include width-height(8px, 8px);
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: 30px;
+            background-color: $color-white-fff;
+            transform: rotate(-45deg);
+        }
+    }
+
+    &__item {
+        @include padding(13px 0);
+        @include flex-row;
+        cursor: pointer;
+        position: relative;
+
+        &:not(:last-child) {@include elementBorderProportiesBottom(1px solid $color-light-gray-e4e4e4);}
+
+        & .fa-chevron-right {
+            @include margin-right(0);
+            font-size: 10px !important;
+            margin-left: auto;
+        }
+    }
+
+    &__item:hover &__link,
+    &__item:hover  &__icon:not(.fa-chevron-right) {color: $color-orange-ffa500;}
+
+    &__link {
+        @include resetTagA;
+        @include FontsGeneralVariables(14px, 400, 20px);
+        @include flex-row;
+        color: $color-black-000;
+    }
+
+    &__icon {
+        font-size: 20px;
+        color: $color-light-gray-aaa;
+    }
+
+    // Drop-menu
+    &__item-drop-menu {
+        @include list-reset;
+        @include padding(10px 0);
+        @include transitionAll(all 0.3s ease);
+        position: absolute;
+        right: -225px;
+        top: 0;
+        z-index: 50;
+        min-height: 100px;
+        min-width: 215px;
+        background-color: $color-white-fff;
+        text-align: left;
+        box-shadow: 0px 0px 17px -9px rgba(30, 31, 32, 1);
+        transform: translateY(20px);
+        opacity: 0;
+        visibility: hidden;
+
+        &-item {
+            @include padding(10px 20px);
+            @include transitionAll($transition-duration); 
+            
+            &:hover {background-color: rgba(0, 0, 0, 0.03)}
+        }
+
+        &-item:hover &-link {color: $color-orange-ffa500;}
+
+        &-link {
+            @include FontsGeneralVariables(14px, 400, 20px);
+            @include resetTagA;
+            color: $color-black-000;
+        }
+    }
+
+    &__item:hover &__item-drop-menu {
+        @include visibility-visible;
+        transform: translateY(0);
+    }
+}

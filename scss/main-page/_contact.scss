@@ -1,0 +1,94 @@
+.contact-block {
+    &__list {
+        @include list-reset;
+        @include flex(space-between, center);
+        flex-wrap: wrap;
+    }
+
+    &__item { 
+        &.contact-phone {@include padding-right(15px);}
+
+        &.daily-news {@include padding-left(15px);}
+    }
+
+    &__item-inner {
+        @include width-height(100%, 200px);
+        @include padding(40px 0);
+        @include elementBorderProporties(1px solid $color-light-gray-e2e2e2);
+        @include borderRadius(5px);
+        @include flex(space-between, center);
+        flex-direction: row;        
+    }
+
+    &__img-wrapper {
+        @include flex(center, center);
+        @include width-height(32.803%, 100%);
+        @include elementBorderProportiesLeftRight(1px solid $color-light-gray-e2e2e2);
+    }
+
+    &__info {
+        @include padding(0 15px 0 25px);
+        @include flex-column;
+        width: 67.197%;
+
+        &.contact-form {@include padding-right(80px);}
+    }
+
+    &__pre-title {
+        @include FontsGeneralVariables(13px, 400, 1.25em);
+        color: $color-light-gray-aaa;
+        margin-bottom: 10px;        
+        display: inline-block;
+    }
+
+    &__title {
+        @include margin-bottom(15px);
+        @include FontsGeneralVariables(12px, 600, 1.1);
+        text-transform: uppercase;
+        color: $color-black-000;
+    }
+
+    &__tel {
+        @include FontsGeneralVariables(30px, 400, 30px);
+        @include margin-bottom(15px);
+        color: $color-light-green-bac34e;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    &__email {
+        font-size: 14px;
+        color: $color-dark-green-0a472e;
+        text-decoration: none;
+    }
+
+    &__desc {
+        @include FontsGeneralVariables(14px, 400, 20px);
+        @include margin-bottom(10px);
+        color: $color-light-dark-555;
+    }
+
+    &__form {
+        @include elementBorderProporties(1px solid $color-light-gray-e2e2e2);
+        @include borderRadius(50px);
+        @include flex(space-between, center);
+        height: 38px;
+    }
+
+    &__label {display: none;}
+
+    &__input {
+        @include padding(0 15px);
+        width: 80%;
+        outline: none;
+        border: 0;
+        background-color: transparent;
+    }
+
+    &__btn {
+        @include padding(0);
+        @include width-height(38px, 38px);
+        background-color: transparent;
+        border: 0;
+    }
+}

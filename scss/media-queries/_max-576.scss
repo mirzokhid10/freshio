@@ -1,0 +1,59 @@
+@include breakpoint-down($max-xs) {
+    /*===========Media max-width: 576px=========== */
+    .container {@include container(540px);}
+    // =============================================
+    // HEADER=======================================
+    .header-mobile__toggle-menu .toggle-menu__list::before {left: 22px;}
+    // HEADER=====================================//
+    // MEIN >* SECTIONS=============================
+    .card {
+        &__content {max-width: 200px;}
+
+        &__item {
+            @include flex(center, center);
+
+            &:nth-child(1),
+            &:nth-child(2),
+            &:nth-child(3) {@include padding(30px 15px 0 15px);}
+    
+            &:nth-child(4) {@include padding(30px 15px);}
+        }
+    }
+
+    .product-cart__img-wrapper {height: 330px;}
+
+    .products__slide {@include padding(0);}
+
+    .products__inner-top {flex-direction: column;}
+
+    .products__title {
+        @include margin-bottom(15px);
+        font-size: 24px;
+    }
+
+    .bottom-options__quantity {right: 30%;}
+
+    .testimonials .slick-dots {text-align: center;}
+
+    // MEIN >* SECTIONS===========================//
+    .contact-us .contact-form  {
+        &__input,
+        &__select,
+        &__textarea {
+            width: 100%;
+            max-width: 100%;
+            flex-basis: 100%;
+        }
+
+        &__input[type='file']::placeholder {font-size: 8px;}
+    }
+    
+
+    .contact-us__form-title {
+        @include margin-bottom(20px);
+        display: block;
+        text-align: center;
+    }
+    // FOOTER=======================================
+    // FOOTER=====================================//
+}

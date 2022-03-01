@@ -1,0 +1,124 @@
+@mixin breakpoint-down($size) {@media only screen and (max-width: $size) {@content;}}
+
+@mixin breakpoint-up($size) {@media only screen and (min-width: $size) {@content;}}
+
+@mixin list-reset {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+@mixin container($width) {
+  width: 100%;
+  max-width: $width;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin backgroundImgProporties($position, $size) {
+  background-repeat: no-repeat;
+  background-position: $position;
+  background-size: $size;
+}
+
+@mixin text-reset {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin width-height($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin flex($justify-content, $align-items) {
+  display: flex;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+
+@mixin flex-row {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin text-hidden($line) {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $line;
+}
+
+@mixin iconProporties($size) {
+  font-weight: 700;
+  font-size: $size;
+}
+
+@mixin borderRadius($size) {border-radius: $size;}
+
+@mixin elementBorderProporties($proporties) {border: $proporties;}
+
+@mixin elementBorderProportiesTop($proporties) {border-top: $proporties;}
+
+@mixin elementBorderProportiesBottom($proporties) {border-bottom: $proporties;}
+
+@mixin elementBorderProportiesLeft($proporties) {border-left: $proporties;}
+
+@mixin elementBorderProportiesLeftRight($proporties) {border-right: $proporties;}
+
+@mixin FontsGeneralVariables($font-size, $font-weight, $line-height) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+}
+
+@mixin margin($size) {margin: $size;}
+
+@mixin margin-top($size) {margin-top: $size;}
+
+@mixin margin-bottom($size) {margin-bottom: $size;}
+
+@mixin margin-right($size) {margin-right: $size;}
+
+@mixin margin-left($size) {margin-left: $size;}
+
+@mixin padding($size) {padding: $size;}
+
+@mixin padding-top($size) {padding-top: $size;}
+
+@mixin padding-bottom($size) {padding-bottom: $size;}
+
+@mixin padding-left($size) {padding-left: $size;}
+
+@mixin padding-right($size) {padding-right: $size;}
+
+@mixin ButtonReset {
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+}
+
+@mixin resetTagA {
+  display: inline-block;
+  text-decoration: none;
+}
+
+@mixin transitionAll($transition) {transition: $transition;}
+
+@mixin visibility-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+@mixin visibility-hidden {
+  opacity: 0;
+  visibility: hidden;
+}

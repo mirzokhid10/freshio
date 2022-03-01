@@ -1,0 +1,162 @@
+.product-cart {
+    @include width-height(330px !important, 100%);
+    @include padding(0 15px);
+    overflow: hidden;
+
+    &__inner {
+        @include elementBorderProporties(1px solid $color-light-gray-e1e1e1);
+        @include borderRadius(5px);
+        @include padding-bottom(40px);
+        position: relative;
+    }
+
+    &__img-wrapper {
+        @include width-height(100%, 258px);
+        position: relative;
+        overflow: hidden;
+    }
+
+    &__img {
+        @include width-height(100%, 100%);
+        @include transitionAll($transition-duration);
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    &:hover &__img-one {@include visibility-hidden;} 
+
+    &__img-one {z-index: 10;}
+
+    &:hover &__img-two {transform: rotateY(-180deg);}
+
+    &__img-two {z-index: 5;}
+
+    &__top-list {
+        @include list-reset;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 1000;
+    }
+
+    &__top-item {
+        @include margin-bottom(2px);
+        @include FontsGeneralVariables(10px, 400, 15px);
+        @include borderRadius(5px 0 19px 0);
+        text-transform: uppercase;
+        color: $color-white-fff;
+
+        &:first-child {
+            @include padding(4px 18px 3px 10px);
+            background-color: $color-light-blue-0791d6;
+        }
+
+        &:last-child {
+            @include padding(4px 18px 3px 10px);
+            width: max-content;
+            background-color: $color-light-green-bac34e;
+        }
+    }
+
+    &__options {
+        @include list-reset;
+        @include flex(center, center);
+        @include transitionAll(all 0.3s ease);
+        transform: translateY(150%) translateX(-50%);
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        z-index: 100;
+    }
+
+    &:hover &__options {transform: translateY(0%) translateX(-50%);}
+
+    &__item {&:not(:last-child) {@include margin-right(5px);}}
+
+    &__link {
+        @include resetTagA;
+        @include width-height(39px, 39px);
+        @include elementBorderProporties(1px solid $color-light-gray-e2e2e2);
+        @include borderRadius(50%);
+        @include flex(center, center);
+        @include transitionAll(all 0.3s ease);
+        background-color: $color-white-fff;
+        color: $color-dark-green-0a472e;
+
+        &:hover {
+            border-color: $color-dark-green-0a472e;
+            background-color: $color-dark-green-0a472e;
+            color: $color-white-fff;
+        }
+
+        &-icon {
+            @include margin-bottom(0 !important);
+            font-size: 14px !important;
+        }
+    }
+
+    &__content {
+        @include padding-top(20px);
+        @include margin(0 auto);
+        max-width: 90%;
+        text-align: center;
+    }
+
+    &__title > a {
+        @include resetTagA;
+        @include margin-bottom(10px);
+        @include FontsGeneralVariables(14px, 400, 1.25em);
+        @include transitionAll(all 0.3s ease);
+        color: $color-light-green-bac34e;
+        display: inline-block;
+        text-transform: capitalize;
+    }
+
+    &__desc > a {
+        @include resetTagA;
+        @include padding(0 15px);
+        @include FontsGeneralVariables(14px, 400, 20px);
+        @include text-hidden(2);
+        @include transitionAll(all 0.3s ease);
+        color: $color-black-000;
+
+        &:hover {color: $color-light-green-bac34e;}
+    }
+
+    &__price {
+        @include FontsGeneralVariables(16px, 400, 1.25em);
+        @include margin(10px 0 20px 0);
+        color: $color-light-purplu-e0bf96;
+        position: relative;
+    }
+
+    &__line {
+        @include width-height(50px, 1px);
+        @include margin(0 auto 20px auto);
+        @include transitionAll(all 0.3s ease);
+        background-color: $color-light-green-bac34e;
+    }
+
+    &:hover &__line {width: 100px;}
+
+    &__btn {
+        @include resetTagA;
+        @include flex(center, center);
+        @include FontsGeneralVariables(12px, 700, 1);
+        text-transform: uppercase;
+        color: $color-black-000;
+
+        &:hover {color: $color-light-green-bac34e;}
+    }
+    
+    &__btn:hover &__icon {left: 3px;}
+
+    &__icon {
+        @include margin(0 0 1.5px 7px);
+        @include transitionAll(all 0.3s ease);
+        font-size: 10px;
+        position: relative;
+        left: 0;
+    }
+}

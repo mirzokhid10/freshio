@@ -1,0 +1,16 @@
+.title {
+    @include FontsGeneralVariables(30px, 400, 1.1);
+    @include flex-row;
+    color: $color-dark-green-0a472e;
+    letter-spacing: -.75px;
+    max-width: 50%;
+
+    &::before {
+        @include width-height(14px, 14px);
+        @include borderRadius(50%);
+        @include elementBorderProporties(3px solid $color-light-green-bac34e);
+        @include margin-right(10px);
+        content: '';
+        display: inline-block;
+    }
+}

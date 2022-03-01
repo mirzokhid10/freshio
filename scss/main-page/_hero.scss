@@ -1,0 +1,16 @@
+.hero {
+    @include padding-top(30px);
+    
+    &__inner {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 310px);
+        grid-row-gap: 30px;
+        grid-column-gap: 30px;
+    }
+
+    & .main-slider {
+        grid-row: 1 / span 2;
+        grid-column: 1 / span 2;
+    }
+}

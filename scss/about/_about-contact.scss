@@ -1,0 +1,29 @@
+.about-contact {
+    @include padding(50px 0);
+    @include flex(space-between, center);
+    @include elementBorderProportiesBottom(1px solid $color-light-gray-e2e2e2);
+
+    & .contact-block__item { 
+        &-inner {
+            @include padding(0);
+            height: 50px !important;
+            justify-content: normal; 
+        }
+    }
+
+    & .contact-block__img {
+        @include width-height(48px, 48px);
+  
+        &-wrapper {width: 48px;}
+    }
+
+    & .contact-block__info {@include padding(0 15px 0 15px);}
+
+    & .contact-block__title {@include margin-bottom(12px);}
+
+    & .contact-block__tel {@include margin-bottom(0 !important);}
+
+    & .contact-block__email {text-decoration: underline;}
+
+    &__payment {@include flex(flex-end, center);}
+}

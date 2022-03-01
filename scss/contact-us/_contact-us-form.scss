@@ -1,0 +1,126 @@
+.contact-us {
+    @include padding-bottom(60px);
+
+    & > * ul {@include list-reset;}
+
+    & > * a, p {
+        @include FontsGeneralVariables(.8125rem, 400, 1.25em);
+        color: $color-light-black-414141;
+    }
+
+    &__inner {@include flex(space-between, flex-start);}
+
+    &-title {
+        display: inline-block;
+        text-transform: uppercase;
+        @include margin-bottom(32px);
+        color: $color-light-black-414141;
+        @include FontsGeneralVariables(1.125rem, 400, 1.1);
+    }
+
+    &__block-info {
+        @include padding-right(15px);
+        @include flex-column;
+    }
+
+    &__list {@include flex-column;}
+
+    &__item {
+        @include flex-row;
+        @include padding(16px 0);
+
+        &:first-child {@include elementBorderProportiesBottom(1px solid rgba(0,0,0,.1));}
+
+        &-icon-wrapper {
+            @include padding-right(24px);
+            font-size: 28px;
+            @include flex(center, center);
+            @include width-height(56px, 32px);
+            color: $color-light-dark-gray-878787;
+        }
+    }
+
+    &__link {@include resetTagA;}
+
+    &__form-block {
+        @include padding(35px);
+        @include elementBorderProporties(1px solid rgba(0, 0, 0, 0.125));
+        box-shadow: 0px 7px 9px -7px rgba(34, 60, 80, 0.65);
+    }
+
+    &__form-title {@include margin-bottom(8px);}
+
+    & .contact-form {
+        &__group {
+            width: 100%;
+            @include flex-row;
+            justify-content: space-between;
+            @include margin-bottom(16px);
+        }
+        
+        &__label {
+            @include FontsGeneralVariables(.875rem, 400, 1.25em);
+            color: $color-light-black-414141;
+        }
+
+        &__input,
+        &__select,
+        &__textarea {
+            background: transparent;
+            color: $color-light-gray-aaa;
+            border: 1px solid $color-light-gray-e2e2e2;
+            @include padding(0.5rem 1rem);
+            @include FontsGeneralVariables(16px, 400, 1.25);
+            @include borderRadius(0.25rem);
+            @include transitionAll(all 0.36s ease);
+
+            &:hover {border-color: $color-dark-green-0a472e;}
+        }
+
+        &__input[type = 'file'] {
+            background: $color-light-gray-eceeef;
+            position: relative;
+            cursor: no-drop;
+        }
+
+        ::-webkit-file-upload-button {
+            @include padding(12.5px 15px);
+            @include FontsGeneralVariables(.6875rem, 400, 1);
+            @include transitionAll($transition-duration);
+            @include flex(center, center);
+            text-transform: uppercase;
+            color: $color-white-fff;
+            background-color: $color-light-green-bac34e;
+            position: absolute;
+            right: -4px;
+            top: 0;
+            border: 0;
+            cursor: pointer;
+
+            &:hover {background-color: $color-dark-green-0a472e;}
+        }
+
+        &__textarea {
+            @include margin-bottom(16px);
+            resize: vertical;
+        }
+
+        &__btn-wrapper {@include flex(flex-end, center);  }
+
+        &__btn {
+            @include ButtonReset;
+            @include FontsGeneralVariables(12px, 700, 1.25);
+            @include padding(10px 30px);
+            @include borderRadius(30px);
+            @include transitionAll($transition-duration);
+            background-color: $color-light-green-bac34e;
+            border: 0;
+            text-transform: capitalize;
+
+            &:hover {
+                background-color: $color-dark-green-0a472e;
+                color: $color-white-fff;
+            }
+        }        
+    }
+}

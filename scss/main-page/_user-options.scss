@@ -1,0 +1,309 @@
+.user-options {
+    @include width-height(300px, 100%);
+    @include transitionAll(all 0.5s ease);
+    @include padding(0 20px 0 15px);
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: auto;
+    z-index: 99999;
+    background-color: $color-white-fff;
+    overflow:  auto;
+    transform: translateX(100%);
+
+    &--active {transform: translateX(0);}
+
+    &__bg {
+        @include width-height(100%, 100vh);
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 88888;
+        background-color: rgba($color: #000000, $alpha: 0.7);
+        display: none;
+
+        &--active {display: block;}
+    }
+
+    &__top-list {
+        @include list-reset;
+        @include flex(space-between, center);
+        @include padding(30px 0);
+    }
+
+    &__item:first-child {@include width-height(130px, 71px);}
+
+    &__close-btn {
+        background-color: transparent;
+        padding: 0;
+        border: 0;
+
+        &-icon {
+            font-size: 24px;
+            color: $color-light-gray-aaa;
+
+            &:hover {color: $color-light-green-bac34e;}
+        }
+    }
+
+    .options-title {
+        @include FontsGeneralVariables(16px, 400, 1.1);
+        @include margin-bottom(20px);
+        color: $color-light-green-bac34e;
+        display: inline-block;
+        margin-bottom: 20px;
+    }
+}
+
+.user-form {
+    width: 100%;
+    @include flex-column;
+    @include margin-bottom(16px);
+
+    &__label {display: none;}
+
+    &__icon {
+        transform: rotate(-45deg);
+        position: absolute;
+        right: 8px;
+        top: 8px;
+    }
+
+    &__suggestion {
+        @include FontsGeneralVariables(12px, 400, 1.25em);
+        @include flex(space-between, center);
+        @include margin-bottom(16px);
+        text-transform: capitalize; 
+    }
+
+    &__checkbox-group {@include flex-row;}
+
+    &__checkbox {
+        @include elementBorderProporties(1px solid $color-light-gray-e2e2e2);
+        @include margin-right(7px);
+        font-size: 14px;
+    }
+
+    &__checkbox-label {color: $color-light-black-414141;}
+
+    &__suggestion-btn {
+        @include resetTagA;
+        @include transitionAll(all 0.3s ease);
+        color: $color-light-dark-555;
+
+        &:hover {color: $color-light-green-bac34e;}
+    }
+}
+
+.form-input {
+    @include padding(8px 30px 8px 8px);
+    @include elementBorderProporties(1px solid $color-light-gray-e2e2e2);
+    @include FontsGeneralVariables(14px, 400, 1.25);
+    @include borderRadius(0.25rem);
+    display: block;
+    width: 100%;
+    color: $color-light-gray-aaa;
+    outline: none;
+
+    &:focus {border-color: $color-light-green-bac34e;}
+
+    &::placeholder {text-transform: capitalize;}
+}
+
+.input-group {
+    @include margin-bottom(16px);
+    position: relative;
+}
+
+.form-btn {
+    @include FontsGeneralVariables(12px, 700, 1.25em);
+    @include borderRadius(20px);
+    @include padding(10px 15px 7px 15px);
+    @include elementBorderProporties(1px solid transparent);
+    @include transitionAll($transition-duration);
+    background-color: $color-light-green-bac34e;
+    color: $color-white-fff;
+    text-transform: capitalize;
+
+    &:active {background-color: $color-dark-green-073522;}
+}
+
+.reset-form {
+    @include width-height(100%, 0);
+    display: none;
+
+    &--active {
+        height: auto;
+        display: block;
+    }
+
+    &__title {
+        @include FontsGeneralVariables(18px, 400, 1.1);
+        @include margin-bottom(8px);
+        color: $color-dark-green-0a472e;
+        display: block;
+        text-transform: capitalize;
+        text-align: center;
+    }
+
+    &__btn {
+        display: block;
+        width: 100%;
+    }
+}
+
+.option-socials {
+    @include margin(20px 0 30px 0);
+
+    &__list {
+        @include list-reset;
+        @include flex-row;
+    }
+
+    &__item {@include margin-right(5px);}
+
+    &__link {
+        @include resetTagA;
+        @include borderRadius(50%);
+        @include width-height(40px, 40px);
+        @include transitionAll(all 0.3s ease);
+        @include flex(center, center);
+        @include elementBorderProporties(1px solid transparent);
+        color: $color-white-fff;
+       
+        &.facebook__icon {
+            background-color: $color-dark-blue-4c68a2;
+
+            &:hover {
+                border-color: $color-dark-blue-4c68a2;
+                background-color: transparent;
+                color: $color-dark-blue-4c68a2;
+            }
+        }
+
+        &.google__icon {
+            background-color: $color-light-blue-4285f4;
+        
+            &:hover {
+                border-color: $color-light-blue-4285f4;
+                background-color: transparent;
+                color: $color-light-blue-4285f4;
+            }
+        }
+
+        &.twitter__icon {
+            background-color: $color-light-blue-53d1f8;
+        
+            &:hover {
+                border-color: $color-light-blue-53d1f8;
+                background-color: transparent;
+                color: $color-light-blue-53d1f8;
+            }
+        }
+    }
+
+    &__icon {font-size: 12px;}
+}
+
+.resgister-form {
+    @include margin-bottom(16px);
+
+    &__checkbox {
+        @include margin-right(7px);
+        border-color: $color-light-gray-e2e2e2;
+    }
+    
+    &__checkbox-label {
+        color: $color-light-black-414141;
+        font-size: 12px;
+        text-transform: capitalize;
+    }
+    
+    &__checkbox-group {
+        @include flex-row;
+        @include margin-bottom(16px);
+    }
+
+    &__btn {width: 100%;}
+}
+
+.options-bottom {
+    @include padding(20px 0 50px 0);
+    text-transform: capitalize;
+
+    &__inner {@include flex(space-between, center);}
+
+    &__selection-options {
+        @include padding-left(15px);
+        @include elementBorderProportiesLeftRight(1px solid $color-light-gray-aaa);
+        width: 50%;
+    }
+
+    &__title {
+        @include FontsGeneralVariables(14px, 700, 1.25em);
+        @include margin-bottom(10px);
+        display: inline-block;
+        color: $color-light-gray-aaa;
+    }
+
+    & > * ul {@include list-reset;}
+}
+
+.language {
+    color: $color-light-gray-aaa;
+
+    &__list {
+        @include flex(space-between, center);
+        width: 80px;
+        flex-wrap: wrap;
+    }
+
+    &__item {@include margin-bottom(2px);}
+
+
+    &__link {
+        @include padding(0 4px);
+
+        &--active {@include elementBorderProporties(1px solid $color-light-green-bac34e);}
+    }
+}
+
+.currency {
+    &__list {@include flex-row;}
+
+    &__item {@include margin(0 5px);}
+
+    &__link {
+        @include resetTagA;
+        @include FontsGeneralVariables(13px, 500, $color-light-gray-aaa);
+        color: $color-light-gray-aaa;
+        text-transform: uppercase;
+        
+        &--active {color: $color-light-green-bac34e;}
+    }
+}
+
+.bottom-setting {
+    width: 50%;
+    padding-left: 15px;
+
+    &__list {@include flex-column;}
+
+    &__item {&:not(:last-child) {@include margin-bottom(6px);}}
+
+    &__link {
+        @include resetTagA;
+        @include FontsGeneralVariables(13px, 400, 1);
+        color: $color-light-gray-aaa;
+    }
+
+    &__icon {
+        @include transitionAll($transition-duration);
+        @include margin-right(5px);
+        font-size: 12px !important;
+
+        &:hover {color: $color-light-green-bac34e;}
+    }
+}

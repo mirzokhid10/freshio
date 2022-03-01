@@ -1,0 +1,28 @@
+@include breakpoint-down($max-lg) {
+    /*===========Media max-width: 1200px=========== */
+    .container {@include container(1140px);}
+    // =============================================
+    // HEADER=======================================
+
+    // HEADER=====================================//
+    // MEIN >* SECTIONS=============================
+    .card__item {&::after {display: none;}}
+
+    .product-cart {width: 100% !important;}
+
+    .testimonials {&__content {@include padding-left(30px);}}
+
+    .contact-block {
+        &__item-inner {@include width-height(100%, 225px);}
+
+        &__info.contact-form {@include padding-right(15px);}
+    }
+
+    .contact-item {
+        display: none;
+    }
+
+    // MEIN >* SECTIONS===========================//
+    // FOOTER=======================================
+    // FOOTER=====================================//
+}

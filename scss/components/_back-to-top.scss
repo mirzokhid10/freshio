@@ -1,0 +1,19 @@
+.back-to-top {
+    @include width-height(40px, 40px);
+    @include flex(center, center);
+    @include borderRadius(50%);
+    @include transitionAll($transition-duration);
+    position: fixed;
+    bottom: 70px;
+    right: 40px;
+    z-index: 999;
+    background-color: $color-light-green-bac34e;
+    text-decoration: none;
+    color: $color-white-fff;
+    @include visibility-hidden;
+
+
+    &--active {@include visibility-visible;}
+
+    &:hover {background-color: $color-light-dark-272727;}
+}

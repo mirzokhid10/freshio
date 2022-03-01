@@ -1,0 +1,5 @@
+.external-navigation {
+    @include padding(21.5px 0);
+
+    &__inner {@include flex(space-between, center);}
+}

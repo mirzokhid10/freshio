@@ -1,0 +1,75 @@
+.footer {
+    & > * ul {@include list-reset;}
+
+    &__inner { @include padding(60px 0);}
+
+    & .navigation-blocks {
+        @include flex(space-between, flex-start);
+        flex-wrap: wrap;
+        
+        &__item {
+            @include flex-column;
+
+            &:not(:last-child) {@include margin-right(20px);}
+        }
+
+        &__name {
+            @include FontsGeneralVariables(12px, 600, 1);
+            @include margin-bottom(30px);
+            letter-spacing: 2.4px;
+            color: $color-black-000;
+            display: inline-block;
+            text-transform: uppercase;
+        }
+
+        &__address {
+            @include margin-bottom(16px);
+            color: $color-black-000;
+            font-style: normal;
+            max-width: 250px;
+        }
+
+        &__times {@include flex-column;}
+
+        &__time-days {
+            color: $color-light-gray-aaa;
+            text-transform: capitalize;
+        }
+    
+        &__nav-link {
+            @include resetTagA;
+            @include transitionAll(all 0.3s ease);
+            color: $color-light-dark-555;
+            position: relative;
+            left: 0;
+
+            &:hover {
+                color: $color-light-green-bac34e;
+                left: 5px;
+            }
+        }
+    }
+
+    & > * p, time, a, address {@include FontsGeneralVariables(14px, 400, 24px);}
+
+    &__copy-right {
+        @include elementBorderProportiesTop(1px solid $color-light-gray-e2e2e2);
+        @include padding(40px 0);
+        text-align: center;
+
+        &-text {
+            color: $color-light-dark-555;
+
+            &-link {
+                @include resetTagA;
+                color: $color-light-green-bac34e;
+            }
+        }
+    }
+    & .about-us__container {
+        max-width: 1680px;
+        width: 100%;
+        @include padding(0 15px);
+        @include margin(0 auto);
+    }
+}

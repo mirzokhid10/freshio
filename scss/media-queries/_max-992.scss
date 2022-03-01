@@ -1,0 +1,135 @@
+@include breakpoint-down($max-md) {
+    /*===========Media max-width: 992px=========== */
+    .container {@include container(960px);}
+    // =============================================
+    // HEADER=======================================
+    .external-navigation,
+    .header{display: none;}
+
+    .header-mobile,
+    .mobile__search-form,
+    .bottom-options {display: block;}
+
+    // HEADER=====================================//
+    // MEIN >* SECTIONS=============================
+    // Hero=========================================
+    .main {@include padding-bottom(65px);}
+    .header__mobile.header-mobile{@include padding(0);}
+
+    .hero {
+        @include padding-top(30px);
+        
+        &__inner {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(4, 220px);
+            grid-row-gap: 8px;
+            grid-column-gap: 0;
+        }
+    
+        & .main-slider {
+            grid-row: 1 / span 3;
+            grid-column: 1 / span 3;
+        }
+
+        .main-slider__content {
+            top: 60px;
+            left: 40px;
+        }
+
+        .main-slider__title,
+        .main-slider__pre-title {font-size: calc(20px + (((30 - 20) * 2) * 0.8 ) * ((100vw - 320px) / 992));}
+
+        .discover {
+            @include margin-right(15px);
+
+            &__content {
+                left: 30px;
+                top: 40px;
+                width: 100%;
+            }
+
+            &__title {@include margin-bottom(30px);}
+        }
+    
+        .summer-sale {
+            @include margin-left(15px);
+
+            &__content {width: 100%;}
+        }
+    }
+    .toggle-menu__btn::after {display: none;}
+    // Hero=======================================//
+
+    .testimonials {@include padding-bottom(0);}
+
+    .card__item {
+        &:nth-child(1),
+        &:nth-child(2) {@include padding-bottom(0);}
+    }
+
+    .product-gallery {
+        &__content {
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        &__img-link::after,
+        &__img-link::before {display: none;}
+    }
+
+    .testimonials {
+        &__block {flex-direction: column;}
+
+        &__content {@include padding(0);}
+
+        &__banner-wrapper {
+            width: 100%;
+            @include margin-bottom(20px);
+        }
+
+        &__banner {width: 100%;}
+
+        &__slider-content {max-width: 100%;}
+
+        &__slider-title {font-size: calc(20px + (((30 - 20) * 2) * 0.8 ) * ((100vw - 320px) / 992));}
+
+        &__slider-content-inner {@include padding-left(30px);}
+
+        & .slick-dots {@include padding(0);}
+    }
+
+    .contact-block {&__tel {font-size: 22px;}}
+
+    // ABOUT SECTION================================
+    .about {background-position: center right;}
+    
+    .about-contact{flex-direction: column;}
+
+    .about-contact .contact-block__item-inner {
+        height: 80px !important;
+        justify-content: center;
+    }
+
+    .about-contact .contact-block__item {@include padding(0);}
+
+    .about-contact__payment {
+        @include padding(30px 45px 0 0);
+        justify-content: center;
+    }
+    // ABOUT SECTION==============================//
+    // CONTACT US===================================
+    .contact-us .contact-form__group {flex-direction: column;}
+
+    .contact-us .contact-form__label {
+        @include margin-bottom(10px);
+        text-align: left;
+        max-width: 100%;
+        flex-basis: 100%;
+    }
+    // CONTACT US=================================//
+    // MEIN >* SECTIONS===========================//
+    // FOOTER=======================================
+    // FOOTER=====================================//
+}

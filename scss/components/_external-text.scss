@@ -1,0 +1,4 @@
+.external-text {
+    @include FontsGeneralVariables(14px, 400, 20px);
+    color: $color-black-000;
+}

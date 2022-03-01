@@ -1,0 +1,56 @@
+.bottom-options {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 10000; 
+    width: 100%;
+    background-color: $color-white-fff;
+    display: none;
+
+    &__list {
+        @include flex-row;
+        @include list-reset;
+    }   
+
+    &__item {
+        @include width-height(25%, 69px);
+        @include flex(center, center);
+        position: relative;
+
+        &:not(:last-child) {@include elementBorderProportiesLeftRight(1px solid $color-light-gray-ebebeb);}
+    }
+
+    &__link {
+        @include resetTagA;
+        @include flex-column;
+        @include FontsGeneralVariables(12px, 700, 1);
+        align-items: center;
+        color: $color-dark-green-0a472e;
+        text-transform: capitalize;
+    }
+
+    &__wishlist {position: relative;}
+
+    &__quantity {
+        @include FontsGeneralVariables(12px, auto, 21px);
+        @include width-height(18px, 18px);
+        @include borderRadius(50%);        
+        position: absolute;
+        top: 10px;
+        right: 40%;
+        background-color: $color-light-purplu-e0bf96;
+        display: block;
+        text-align: center;
+        color: $color-white-fff;
+    }
+}
+
+.fal {
+    &.fa-store,
+    &.fa-heart,
+    &.fa-user,
+    &.fa-search {
+        @include margin-bottom(3px);
+        font-size: 20px;
+    }
+}

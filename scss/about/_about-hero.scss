@@ -1,0 +1,9 @@
+.about {
+    @include width-height(100%, 300px);
+    @include backgroundImgProporties(center center, cover);
+    @include flex(flex-start, center);
+    @include margin-bottom(40px);
+    background-image: url('../../media/img/about-hero/about-banner.jpg');
+
+    .header-mobile {@include padding(0);}
+}

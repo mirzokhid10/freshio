@@ -1,0 +1,165 @@
+.panel-tool {
+    position: relative;
+    
+    &__btn {
+        @include width-height(140px, 30px);
+        @include transitionAll(all 0.6s);
+        @include FontsGeneralVariables(12px, 400, 30px);
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        text-align: center;
+        position: fixed;
+        top: 243px;
+        right: 179px;
+        color: $color-white-fff;
+        transform: rotate(-90deg) translateY(236px);
+        align-self: flex-start;
+        background-color: $color-dark-green-0a472e;
+        border-left: none;
+        border: 0;
+        cursor: pointer;
+
+        &--close {transform: rotate(-90deg) translateY(0);}
+    }
+
+    &__body {
+        @include padding(30px 15px);
+        @include transitionAll(all 0.6s);
+        overflow-x: hidden;
+        overflow-y: auto;
+        max-height: 80vh;
+        width: 235px;
+        background-color: $color-light-gray-e6eaef;
+        transform: translateX(100%);
+        visibility: hidden;
+        position: fixed;
+        right: 0;
+        top: 70px;
+        z-index: 9990;
+
+        &--hide {
+            transform: translateX(0);
+            visibility: visible;
+        }
+    }
+
+    &__name {
+        @include FontsGeneralVariables(16px, 700, 1.1);
+        @include margin-bottom(20px);
+        display: inline-block;
+        text-transform: uppercase;
+        color: $color-dark-green-0a472e;
+    }
+
+    &__title {
+        @include flex(flex-start, center);
+        @include margin-bottom(8px);
+        @include padding(0 15px);
+        @include FontsGeneralVariables(.875rem, 700, 1);
+        text-transform: uppercase;
+        text-align: left;
+        color: $color-light-black-414141;
+        
+        & > i {@include margin-right(10px);}
+    }
+}
+
+.theme-options {
+    @include margin-bottom(20px);
+
+    &__list {
+        @include list-reset;
+        @include flex-column;
+        @include padding(0 15px);
+    }
+
+    &__item {
+        @include width-height(100%, 26px);
+        @include margin(5px 10px 5px 0);
+        @include elementBorderProporties(2px solid $color-light-e6eaef);
+        cursor: pointer;
+
+        &.light-green {
+            background-color: $color-light-green-bac34e;
+
+            &:hover {outline: 2px solid $color-light-green-bac34e;}
+        }
+
+        &.orange {
+            background-color: $color-orange-ffa500;
+           
+            &:hover {outline: 2px solid $color-orange-ffa500;}
+        }
+
+        &.light-purple {
+            background-color: $color-light-purple;
+            
+            &:hover {outline: 2px solid $color-light-purple;}
+        }
+    }
+}
+
+.float-header {
+    @include margin-bottom(20px);
+
+    & .enable-options {
+        @include margin(10px 0 0 10px);
+        @include width-height(100px, 36px);
+        @include borderRadius(18px);
+        @include flex(space-between, center);
+        background-color: $color-light-dark-25292c;
+        position: relative;
+
+        &__btn {
+            @include padding(0);
+            @include borderRadius(50%);
+            @include transitionAll(all 0.7s ease 0s);
+            @include width-height(30px, 30px);
+            @include margin(0 3px);
+            @include FontsGeneralVariables(14px, 500, 30px);
+            color: $color-white-fff;
+            text-transform: uppercase;
+            border: 0;
+            z-index: 3;
+            background-color: $color-light-dark-504c4c;
+            
+            &--current {
+                position: relative;
+
+                &::after {
+                    @include width-height(30px, 30px);
+                    @include borderRadius(18px);
+                    @include transitionAll(all 0.7s ease 0s);
+                    content: '';
+                    position: absolute;
+                    top: 0px;
+                    right: 0px;
+                    z-index: -1;
+                    background-color: $color-light-green-bac34e;
+                }
+            }
+        }
+    }
+}
+
+.versions {
+    &__list {
+        @include list-reset;
+        @include padding(0 15px);
+        @include margin-bottom(20px);
+    }
+
+    &__link {
+        @include FontsGeneralVariables(14px, 400, 25px);
+        color: $color-light-gray-aaa;
+        text-transform: capitalize;
+        text-decoration: none;
+
+        &:hover {color: $color-light-green-bac34e;}
+    }
+
+    &__icon {
+        @include FontsGeneralVariables(10px, 600, 1);
+        @include padding-right(5px);
+    }
+}

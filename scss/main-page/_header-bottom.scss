@@ -1,0 +1,6 @@
+.header__bottom {
+    @include flex-row;
+    background-color: $color-dark-green-0a472e;
+
+    &-wrapper {background-color: $color-dark-green-0a472e;}
+}

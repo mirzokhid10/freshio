@@ -1,0 +1,4 @@
+.service-cards {
+    @include flex-column;
+    @include padding-bottom(80px);
+}

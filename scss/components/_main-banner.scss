@@ -1,0 +1,76 @@
+.main-banner {
+    @include backgroundImgProporties(center, cover);
+    position: relative;
+
+    &.discover {background-image: url('../../media/img/slider-img/freshio_h2-bn1.jpg');}
+
+    &.summer-sale {background-image: url('../../media/img/slider-img/freshio_h2-bn2.jpg');}
+
+    & .discover__content {
+        position: absolute;
+        left: 50px;
+        top: 50px;
+    } 
+
+    & .discover__title {
+        @include FontsGeneralVariables(24px, 400, 30px);
+        @include margin-bottom(110px);
+        color: $color-dark-green-0a472e;
+        text-transform: capitalize;
+    }
+
+    &.summer-sale {
+        position: relative;
+
+        & .summer-sale__content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        & .summer-sale__pre-title {
+            @include FontsGeneralVariables(24px, 400, 1.1);
+            @include margin-bottom(15px);
+            color: $color-white-fff;
+            display: inline-block;
+            font-family: $font-Pacifico;
+            text-transform: capitalize;
+        }
+        
+        & .summer-sale__discount {
+            @include FontsGeneralVariables(40px, 400, 1.1);
+            @include margin-bottom(10px);
+            color: $color-yellow-f4ed23;
+            text-transform: uppercase;
+        }
+
+        & .summer-sale__desc {
+            @include margin-bottom(20px);
+            @include FontsGeneralVariables(12px, 400, 1);
+            color: $color-white-fff;
+        }
+
+        & .summer-sale__link {
+            @include resetTagA;
+            @include FontsGeneralVariables(12px, 700, 20px);
+            @include padding(9px 29px);
+            @include borderRadius(30px);
+            @include transitionAll(all 0.3s);
+            color: $color-white-fff;
+            background-color: $color-light-green-bac34e;    
+            text-transform: capitalize;
+
+            &:hover {
+                background-color: $color-white-fff;
+                color: $color-yellow-f4ed23;
+            }
+        }
+
+        & .summer-sale__icon {
+            @include padding-left(3px);
+            font-size: 8px;
+        }
+    }
+}

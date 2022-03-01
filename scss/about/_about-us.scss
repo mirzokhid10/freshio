@@ -1,0 +1,50 @@
+.about-us {
+    @include padding-bottom(60px);
+    color: $color-light-gray-aaa;
+
+    & * > ul {@include list-reset;}
+
+    &__title,
+    &__inner-title {
+        @include FontsGeneralVariables(28px, 400, 1.1);
+        color: $color-dark-green-0a472e;
+        text-transform: capitalize;
+    }
+    
+    &__title {@include margin-bottom(8px);}
+
+    &__inner {
+        @include padding(1.25rem);
+
+        &-title {
+            @include margin-bottom(8px);
+            display: block;
+        }
+    }
+
+    &__list {
+        @include flex(space-between, flex-start);
+        @include margin(0 -15px !important);
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        @include padding(0 15px);
+        @include flex-column;
+    }
+
+    &__name {
+        @include FontsGeneralVariables(1.125rem, 400, 1.1);
+        @include margin-bottom(8px);    
+        color: $color-dark-green-0a472e;
+        display: inline-block;
+    }
+
+    &__strong-desc {@include margin-bottom(16px);}
+
+    &__desc {
+        @include FontsGeneralVariables(0.875rem, 500, 1.1);
+        @include margin-bottom(16px);
+    }
+
+}

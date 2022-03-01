@@ -1,0 +1,16 @@
+.mobile__search-form {
+    @include padding(28px 20px);
+    @include transitionAll($transition-duration);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: $color-white-fff;
+    width: 100%;
+    transform: translateY(-100%);
+    display: none;
+    
+    &--active {transform: translateY(0);}
+
+    & .search-form {max-width: 100%;}
+}

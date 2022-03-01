@@ -1,0 +1,30 @@
+.contact-item {
+    @include flex-row;
+    @include margin-right(15px);
+
+    &__icon {
+        @include margin-right(20px);
+        font-size: 36px;
+        color: $color-light-green-bac34e;
+    }
+
+    &__content {@include flex-column;}
+
+    &__contact {
+        @include FontsGeneralVariables(12px, 600, 1.1);
+        @include margin-bottom(10px);
+        letter-spacing: $letter-spacing;
+        color: $color-black-000;
+        display: inline-block;
+        text-transform: uppercase;
+    }
+
+    &__tel-num {
+        @include resetTagA;
+        @include FontsGeneralVariables(18px, 600, 1.1);
+        @include transitionAll($transition-duration);
+        color: $color-light-green-bac34e;
+
+        &:hover {color: $color-light-gray-aaa;}
+    }
+}

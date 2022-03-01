@@ -1,0 +1,27 @@
+.shop-btn {
+    @include resetTagA;
+    @include FontsGeneralVariables(12px, 700, 1);
+    @include padding-bottom(3px);
+    @include elementBorderProportiesBottom(1px solid);
+    @include transitionAll($transition-duration);
+    color: $color-black-000;
+    text-transform: capitalize;
+    
+
+    &:hover {color: $color-light-green-bac34e;}
+
+    &:hover &__icon {
+        color: $color-light-green-bac34e;
+        left: 5px;
+    }
+
+    &__icon {
+        @include padding-left(5px);
+        @include transitionAll($transition-duration);
+        font-size: 8px;
+        color: $color-black-000;
+        position: relative;
+        top: -1px;
+        left: 0;
+    }
+}

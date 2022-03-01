@@ -1,0 +1,18 @@
+.external-navigation {
+    &__list {
+        @include list-reset;
+        @include flex-row;
+    }
+
+    &__item {&:not(:last-child) {@include margin-right(30px);}}
+
+    &__link {
+        @include resetTagA;
+        @include FontsGeneralVariables(12px, 400, 20px);
+        @include transitionAll(all 0.3s ease);
+        color: $color-light-dark-555;
+        text-transform: uppercase;
+        
+        &:hover {color: $color-light-green-bac34e;}
+    }
+}

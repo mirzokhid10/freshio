@@ -1,0 +1,49 @@
+.options {
+    @include flex(flex-end, center);
+
+    &__list {
+        @include list-reset;
+        @include flex-row;
+    }
+
+    &__item {
+        position: relative;
+
+        &:not(:last-child) {margin-right: 16px;}
+    }
+
+    &__link {
+        @include resetTagA;
+        @include width-height(44px, 44px);
+        @include borderRadius(50%);
+        @include flex(center, center);
+        @include transitionAll($transition-duration);
+        line-height: 44px;
+        
+        &:hover {background-color: $color-orange-ffa500;}
+    }
+
+    &__icon {
+        color: $color-dark-green-0a472e;
+        font-size: 16px;
+    }
+
+    &__link:hover &__icon {color: $color-white-fff;}
+
+    &__user {background-color: $color-light-blue-e8f8f7;}
+
+    &__heart,
+    &__bag {background-color: $color-light-red-f6f3e3;}
+
+    &__quantity {
+        @include width-height(20px, 20px);
+        @include flex(center, center);
+        @include FontsGeneralVariables(10px, 400, 20px);
+        @include borderRadius(50%);
+        color: $color-white-fff;
+        background-color: $color-light-purplu-e0bf96;
+        position: absolute;
+        right: -9px;
+        top: 0;
+    }
+}

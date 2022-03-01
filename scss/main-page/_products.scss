@@ -1,0 +1,65 @@
+.products {
+    @include padding-bottom(80px);
+
+    &__inner-top {
+        @include flex(space-between, center);
+        @include margin-bottom(30px);
+    }
+    
+    &__top-link {
+        @include resetTagA;
+        @include flex-row;
+        @include FontsGeneralVariables(12px, 700, 24px);
+        @include elementBorderProportiesBottom(1px solid $color-light-green-bac34e);
+        @include padding-bottom(5px);
+        color: $color-light-green-bac34e;
+        text-transform: capitalize;
+    }
+
+    &__top-link:hover &__top-icon {left: 3px;}
+
+    &__top-icon {
+        @include transitionAll($transition-duration);
+        @include margin-left(5px);
+        position: relative;
+        left: 0;
+        font-size: 8px;
+    }
+
+    &__slider:hover &__arrows {@include visibility-visible;}
+
+    &__slider:hover .arrow-prev,
+    &__slider:hover .arrow-next {transform: translateX(0);}
+
+    &__arrows {
+        @include transitionAll(all 0.5s ease);
+        @include visibility-hidden;
+        position: absolute;
+        top: 50%;
+        z-index: 999;
+    }
+
+    .arrow {
+        @include ButtonReset;
+        @include width-height(40px, 40px);
+        @include borderRadius(50%);
+        @include elementBorderProporties(1px solid $color-light-gray-e2e2e2);
+        @include transitionAll(all 0.5s ease);
+        background-color: $color-white-fff;
+
+        &:hover {
+            background-color: $color-light-green-bac34e;
+            color: $color-white-fff;
+        }
+
+        &-prev {
+            left: 0;
+            transform: translateX(-110%);
+        }
+
+        &-next {
+            right: -9px;
+            transform: translateX(110%);
+        }
+    }
+}

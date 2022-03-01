@@ -1,0 +1,75 @@
+.aside-menu {
+    @include width-height(300px, 100%);
+    @include transitionAll($transition-duration);
+    @include visibility-hidden;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 9999;
+    background-color: $color-dark-green-0a472e;
+    overflow-y: auto;
+    transform: translateX(-100%);
+
+    &--active {
+        @include visibility-visible;
+        transform: translateX(0%);        
+    }
+
+    &-bg {
+        @include width-height(100%, 100vh);
+        @include transitionAll(all 0.2s linear);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 9000;
+        background-color: rgba(0,0,0,.7);
+        @include visibility-hidden;
+
+        &--active {@include visibility-visible;}
+    }
+
+    & > * {@include FontsGeneralVariables(14px, 400, 16px);}
+
+    &__btn {
+        @include ButtonReset;
+        @include width-height(100%, auto);
+        @include elementBorderProportiesBottom(1px solid $color-dark-green-073522);
+        @include flex(flex-end, center);
+        @include padding(15px);
+        color: $color-light-green-bac34e;
+        text-transform: capitalize;
+        
+        &-icon {@include margin-right(4px);}
+    }
+
+    &__list {@include list-reset;}
+
+    &__item {
+        @include padding(15px);
+        @include flex(space-between, center);
+        @include elementBorderProportiesBottom(1px solid $color-dark-green-073522);
+        position: relative;
+    }
+
+    &__link {
+        @include resetTagA;
+        color: $color-white-fff;
+        text-transform: capitalize;
+
+        &-btn {
+            @include ButtonReset;
+            @include width-height(48px, 48px);
+            @include elementBorderProportiesLeft(1px solid $color-dark-green-073522);
+            line-height: 48px;
+            position: absolute;
+            right: 0;
+            color: $color-white-fff;
+            
+            & > * {@include transitionAll(all 0.3s ease);}
+
+            &:hover > * {@include padding-left(10px);}
+        }
+    }
+}
